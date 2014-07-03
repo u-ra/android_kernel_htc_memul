@@ -474,11 +474,13 @@ static void pet_watchdog_work(struct work_struct *work)
 #endif
 #endif 
 
+#ifdef CONFIG_HTC_DEBUG_FOOTPRINT
 #ifdef CONFIG_ARCH_MSM8226
 	
 	if ((mpm_get_timetick() > (htc_pvs_adjust_seconds*WDT_HZ)) && htc_pvs_adjust) {
 		htc_pvs_adjust = false;
 	}
+#endif
 #endif
 }
 
